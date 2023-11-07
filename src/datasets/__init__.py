@@ -1,2 +1,3 @@
 from .Realestate_dataset_video import *
+from .Scannet_dataset_video import Scannet_dataset_video
 from .DistributedSaveableSampler import DistributedSaveableSampler

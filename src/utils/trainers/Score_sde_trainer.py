@@ -58,7 +58,7 @@ class Score_sde_trainer(Base_trainer):
 
 		# main components, dataloaders, model, optimizer
 		batch_size = 64//self.world_size
-		self.dataset = Realestate_dataset_video('train')
+		self.dataset = Scannet_dataset_video('train')#Realestate_dataset_video('train')
 		self.sampler = DistributedSaveableSampler(self.dataset,num_replicas=self.world_size,rank=self.rank,shuffle=True)
 		self.train_loader = torch.utils.data.DataLoader(self.dataset,batch_size=batch_size,sampler=self.sampler,drop_last=True,num_workers=8,persistent_workers=True)
 
